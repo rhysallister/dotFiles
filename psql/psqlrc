@@ -4,12 +4,13 @@
 
 \set QUIET on 
 \set COMP_KEYWORD_CASE upper
-\pset null '⏹⏺⏹⏺'
+\pset null ' ⏹  ⏺  ⏹  ⏺  '
 \pset format aligned
 \pset linestyle unicode 
 \pset border 2
 \pset columns 
 \pset unicode_header_linestyle double
+\timing off
 ---------------------------------------------------------------------------------
 
 
@@ -35,10 +36,10 @@
 
 /*				Prompt Shenaningans				*/
 
-\set PROMPT1 '%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# '
-\set PROMPT2 '%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# '
-\set longprompt '\\set PROMPT1 \'%[%033[5;34m%]%x%[%033[0m%]%n@%M:%>/%/|%[%033[1;34m%]%l%[%033[0m%]|%# \'      '
-\set shortprompt '\\set PROMPT1 \'%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# \' \\set PROMPT2 \'%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# \''
+\set PROMPT1 '%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]| 🐘%#'
+\set PROMPT2 '%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]| 🐘%#'
+\set longprompt '\\set PROMPT1 \'%[%033[5;34m%]%x%[%033[0m%]%n@%M:%>/%/|%[%033[1;34m%]%l%[%033[0m%]|%# \'      🐘'
+\set shortprompt '\\set PROMPT1 \'%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# 🐘\' \\set PROMPT2 \'%[%033[5;34m%]%x%[%033[0m%]%/|%[%033[1;34m%]%l%[%033[0m%]|%# 🐘\''
 
 SELECT :'HOST' !~* '^/' as is_true
 \gset
@@ -54,9 +55,9 @@ SELECT :'HOST' !~* '^/' as is_true
 SELECT :'HOST' !~* '/' as is_true
 \gset
 \if :is_true
-\set HISTFILE ~/.psql/HISTORY/PG--:USER-:HOST-:DBNAME-:PORT
+\set HISTFILE ~/dotFiles/psql/HISTORY/PG--:USER-:HOST-:DBNAME-:PORT
 \else
-\set HISTFILE ~/.psql/HISTORY/PG--:USER-LOCAL-:DBNAME-:PORT
+\set HISTFILE ~/dotFiles/psql/HISTORY/PG--:USER-LOCAL-:DBNAME-:PORT
 \endif
 \set HISTSIZE -1 
 \set HISTCONTROL ignoredups 
@@ -75,9 +76,5 @@ SELECT :'HOST' !~* '/' as is_true
 
 
 
-\x auto
-\timing
-\echo '\n' 
-\echo Connected to :DBNAME on :HOST as :USER 
-\echo '\n\n'
+\timing on
 \unset QUIET

@@ -1,2 +1,9 @@
-.pgpass
 .directory
+psql/HISTORY/*
+!psql/HISTORY/.gitkeep
+vim/plugged/*
+!vim/plugged/.gitkeep
+vim/undodir/*
+!vim/undodir/.gitkeep
+tpm/
+psql/pgpass
