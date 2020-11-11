@@ -7,3 +7,4 @@ vim/undodir/*
 !vim/undodir/.gitkeep
 tpm/
 psql/pgpass
+.netrwhist
