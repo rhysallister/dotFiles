@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on
 
+
 let mapleader=" "
 set showcmd
 set path+=**
@@ -10,7 +11,7 @@ set wildignore=+**/nodemodules/**
 set tabstop=2
 set shiftwidth=2
 set list
-set listchars=tab:→\ ,eol:↲,space:·
+"set listchars=tab:→\ ,eol:↲,space:·
 set so=20
 set hlsearch
 set noswapfile
